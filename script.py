@@ -45,8 +45,16 @@ heslo=input("Zadej heslo: ")
 
 if uzivatelske_jmeno in uzivatele and uzivatele.get(uzivatelske_jmeno) == heslo:
     print("username: ",uzivatelske_jmeno, "\n"
-          "password: ",heslo, "\n"
+          "password: ",heslo, "\n" ,
+          "-" * 20, "\n"
           "Welcome to the app, ",uzivatelske_jmeno)
+
+    print ("We have 3 texts to be analyzed.","\n",
+           "-" * 20)
+    
+    vybrany_text=input("Enter a number btw. 1 and 3 to select: ",vybrany_text)
+   
+
 
 else:
     print("username: ",uzivatelske_jmeno, "\n"
