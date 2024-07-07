@@ -50,9 +50,14 @@ if uzivatelske_jmeno in uzivatele and uzivatele.get(uzivatelske_jmeno) == heslo:
           "Welcome to the app, ",uzivatelske_jmeno)
 
     print ("We have 3 texts to be analyzed.","\n",
-           "-" * 20)
+           "-" * 20,
+          )
     
-    vybrany_text=input("Enter a number btw. 1 and 3 to select: ",vybrany_text)
+vyber=(1,2,3)
+while zvoleny_vyber in vyber:
+    zvoleny_vyber = input("Enter a number btw. 1 and 3 to select: ",zvoleny_vyber)
+
+    
    
 
 
