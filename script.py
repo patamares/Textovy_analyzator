@@ -65,24 +65,34 @@ while zvoleny_vyber not in vyber:
 print ("-" * 20)
           
 
-text=TEXTS[int(zvoleny_vyber)-1]
+text=TEXTS[int(zvoleny_vyber)-1]    #prebrani textu na cisla z vyberu
 
-slova=text.split()
-pocet_slov=len(slova)
+slova=text.split()                  #rozdeleni textu na slova
+pocet_slov=len(slova)               #pocet slov
 
-pocet_slov_velka_pismena = (0)
+pocet_slov_zacinajici_velka_pismena = (0)       #pocitani slov, ktere zacinaji velkym pismenem, pripise se +1
 for slovo in slova:
     if slovo.istitle():
+        pocet_slov_zacinajici_velka_pismena+=1
+
+pocet_slov_velka_pismena = (0)              #pocitani slov, ktere jsou cele z velkych pismen, pripise se +1
+for slovo in slova:
+    if slovo.isupper():
         pocet_slov_velka_pismena+=1
 
+pocet_slov_mala_pismena = (0)           #pocitani slov, ktere jsou cele z malych pismen, pripise se +1
+for slovo in slova:
+    if slovo.islower():
+        pocet_slov_mala_pismena+=1
 
 
 
 
 
-
-print(f"There are {pocet_slov} words in the selected text.")
-print(f"There are {pocet_slov_velka_pismena} titlecase words.")
+print(f"There are {pocet_slov} words in the selected text.")            #vypisou se pozadovane texty
+print(f"There are {pocet_slov_zacinajici_velka_pismena} titlecase words.")
+print(f"There are {pocet_slov_velka_pismena} uppercase words.")
+print(f"There are {pocet_slov_mala_pismena} lowercase words.")
 
 
 
