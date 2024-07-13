@@ -33,17 +33,17 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-uzivatele={
+uzivatele={             #nacteni uzivatelskych jmen a hesla
     "bob": "123",
     "ann": "pass123",
     "mike": "password123",
     "liz": "pass123"
 }
 
-uzivatelske_jmeno=input("Zadej uzivatelske jmeno: ")
-heslo=input("Zadej heslo: ")
+uzivatelske_jmeno=input("Zadej uzivatelske jmeno: ")  #zadani uz. jmena
+heslo=input("Zadej heslo: ")        #zadani hesla
 
-if uzivatelske_jmeno in uzivatele and uzivatele.get(uzivatelske_jmeno) == heslo:
+if uzivatelske_jmeno in uzivatele and uzivatele.get(uzivatelske_jmeno) == heslo:        #overeni uzivatelskeho jmena a hesla, jestli je v databazi
     print("username: ",uzivatelske_jmeno, "\n"
           "password: ",heslo, "\n" ,
           "-" * 20, "\n"
@@ -53,15 +53,23 @@ if uzivatelske_jmeno in uzivatele and uzivatele.get(uzivatelske_jmeno) == heslo:
            "-" * 20,
           )
     
-vyber=(1,2,3)
-while zvoleny_vyber in vyber:
-    zvoleny_vyber = input("Enter a number btw. 1 and 3 to select: ",zvoleny_vyber)
+vyber=("1","2","3")     #moznosti vyberu textu
 
-    
+while True:
+    zvoleny_vyber = input("Enter a number btw. 1 and 3 to select: ")    #zvoleni textu, zadani cisla ktere musi byt 1-3
+    if zvoleny_vyber in vyber:
+        break
+    else:
+         print("Nespravny vyber textu")     #pokud ne, vypise tuto zpravu
+
+
+
+
+
+  
+
+else:   # kdyz uzivatel zada spatne udaje
    
-
-
-else:
     print("username: ",uzivatelske_jmeno, "\n"
           "password: ",heslo, "\n"
           "unregistered user, terminating the program..")
