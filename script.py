@@ -55,24 +55,34 @@ if uzivatelske_jmeno in uzivatele and uzivatele.get(uzivatelske_jmeno) == heslo:
     
 vyber=("1","2","3")     #moznosti vyberu textu
 
-while True:
-    zvoleny_vyber = input("Enter a number btw. 1 and 3 to select: ")    #zvoleni textu, zadani cisla ktere musi byt 1-3
-    if zvoleny_vyber in vyber:
-        break
-    else:
-         print("Nespravny vyber textu")     #pokud ne, vypise tuto zpravu
+zvoleny_vyber = input("Enter a number btw. 1 and 3 to select: ")  #zvoleni textu, zadani cisla ktere musi byt 1-3
+      
+while zvoleny_vyber not in vyber:
+    
+    print("Nespravny vyber textu")     #pokud je zadane nespravne cislo
+    break
+
+print ("-" * 20,)
+          
+
+text=TEXTS[int(zvoleny_vyber)-1]
+slova=text.split()
+pocet_slov=len(slova)
+
+
+
+
+print(f"There are {pocet_slov} words in the selected text.")
 
 
 
 
 
-  
-
-else:   # kdyz uzivatel zada spatne udaje
+#else:   # kdyz uzivatel zada spatne udaje
    
-    print("username: ",uzivatelske_jmeno, "\n"
-          "password: ",heslo, "\n"
-          "unregistered user, terminating the program..")
+ #   print("username: ",uzivatelske_jmeno, "\n"
+  #        "password: ",heslo, "\n"
+   #       "unregistered user, terminating the program..")
 
 
 
