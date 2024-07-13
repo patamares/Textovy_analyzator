@@ -62,17 +62,27 @@ while zvoleny_vyber not in vyber:
     print("Nespravny vyber textu")     #pokud je zadane nespravne cislo
     break
 
-print ("-" * 20,)
+print ("-" * 20)
           
 
 text=TEXTS[int(zvoleny_vyber)-1]
+
 slova=text.split()
 pocet_slov=len(slova)
+
+pocet_slov_velka_pismena = (0)
+for slovo in slova:
+    if slovo.istitle():
+        pocet_slov_velka_pismena+=1
+
+
+
 
 
 
 
 print(f"There are {pocet_slov} words in the selected text.")
+print(f"There are {pocet_slov_velka_pismena} titlecase words.")
 
 
 
