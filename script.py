@@ -2,7 +2,7 @@
 projekt_1.py: první projekt do Engeto Online Python Akademie
 author: Patrik Mareš
 email: patamares@seznam.cz
-discord: 
+discord: patrikm8
 """
 
 TEXTS = ['''
@@ -52,66 +52,60 @@ if uzivatelske_jmeno in uzivatele and uzivatele.get(uzivatelske_jmeno) == heslo:
     print ("We have 3 texts to be analyzed.","\n",
            "-" * 20,
           )
+
+    
+    vyber=("1","2","3")     #moznosti vyberu textu
+
+    zvoleny_vyber = input("Enter a number btw. 1 and 3 to select: ")  #zvoleni textu, zadani cisla ktere musi byt 1-3
+
+    while zvoleny_vyber not in vyber:
+    
+        print("Nespravny vyber textu")     #pokud je zadane nespravne cislo
+        zvoleny_vyber = input("Enter a number btw. 1 and 3 to select: ")
+
+    print ("-" * 20)
+
+
+    text=TEXTS[int(zvoleny_vyber)-1]    #prebrani textu na cisla z vyberu
+
+    slova=text.split()                  #rozdeleni textu na slova
+    pocet_slov=len(slova)               #pocet slov
+
+    pocet_slov_zacinajici_velka_pismena = (0)       #pocitani slov, ktere zacinaji velkym pismenem, za kazde se pripise +1
+    for slovo in slova:
+        if slovo.istitle():
+            pocet_slov_zacinajici_velka_pismena+=1
+
+    pocet_slov_velka_pismena = (0)              #pocitani slov, ktere jsou cele z velkych pismen, za kazde se pripise +1
+    for slovo in slova:
+        if slovo.isupper():
+            pocet_slov_velka_pismena+=1
+
+    pocet_slov_mala_pismena = (0)           #pocitani slov, ktere jsou cele z malych pismen, za kazde se pripise +1
+    for slovo in slova:
+        if slovo.islower():
+            pocet_slov_mala_pismena+=1
+
+    pocet_cisel = (0)           #pocet cisel v textu
+    for slovo in slova:
+        if slovo.isdigit():
+            pocet_cisel+=1
+
+    soucet_cisel = (0)                       #soucet cisel v textu
+    for slovo in slova:
+        if slovo.isdigit():
+            soucet_cisel+=(int(slovo))
+
+    print(f"There are {pocet_slov} words in the selected text.")            #vypisou se pozadovane texty
+    print(f"There are {pocet_slov_zacinajici_velka_pismena} titlecase words.")
+    print(f"There are {pocet_slov_velka_pismena} uppercase words.")
+    print(f"There are {pocet_slov_mala_pismena} lowercase words.")
+    print(f"There are {pocet_cisel} numeric strings.")
+    print(f"The sum of all the numbers {soucet_cisel}.")
+
+    print ("-" * 20)
+
 else:   # kdyz uzivatel zada spatne udaje
-   
     print("username: ",uzivatelske_jmeno, "\n"
           "password: ",heslo, "\n"
           "unregistered user, terminating the program..")
-    
-vyber=("1","2","3")     #moznosti vyberu textu
-
-zvoleny_vyber = input("Enter a number btw. 1 and 3 to select: ")  #zvoleni textu, zadani cisla ktere musi byt 1-3
-      
-while zvoleny_vyber not in vyber:
-    
-    print("Nespravny vyber textu")     #pokud je zadane nespravne cislo
-    break
-
-print ("-" * 20)
-          
-
-text=TEXTS[int(zvoleny_vyber)-1]    #prebrani textu na cisla z vyberu
-
-slova=text.split()                  #rozdeleni textu na slova
-pocet_slov=len(slova)               #pocet slov
-
-pocet_slov_zacinajici_velka_pismena = (0)       #pocitani slov, ktere zacinaji velkym pismenem, za kazde se pripise +1
-for slovo in slova:
-    if slovo.istitle():
-        pocet_slov_zacinajici_velka_pismena+=1
-
-pocet_slov_velka_pismena = (0)              #pocitani slov, ktere jsou cele z velkych pismen, za kazde se pripise +1
-for slovo in slova:
-    if slovo.isupper():
-        pocet_slov_velka_pismena+=1
-
-pocet_slov_mala_pismena = (0)           #pocitani slov, ktere jsou cele z malych pismen, za kazde se pripise +1
-for slovo in slova:
-    if slovo.islower():
-        pocet_slov_mala_pismena+=1
-
-pocet_cisel = (0)           #pocet cisel v textu
-for slovo in slova:
-    if slovo.isdigit():
-        pocet_cisel+=1
-
-soucet_cisel = (0)                       #soucet cisel v textu
-for slovo in slova:
-    if slovo.isdigit():
-        soucet_cisel+=(int(slovo))
-       
-print(f"There are {pocet_slov} words in the selected text.")            #vypisou se pozadovane texty
-print(f"There are {pocet_slov_zacinajici_velka_pismena} titlecase words.")
-print(f"There are {pocet_slov_velka_pismena} uppercase words.")
-print(f"There are {pocet_slov_mala_pismena} lowercase words.")
-print(f"There are {pocet_cisel} numeric strings.")
-print(f"The sum of all the numbers {soucet_cisel}.")
-
-print ("-" * 20)
-
-
-
-
-
-
-
